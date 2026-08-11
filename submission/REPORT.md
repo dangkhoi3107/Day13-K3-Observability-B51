@@ -7,10 +7,10 @@
 - Commit SHA cuối: **Cập nhật sau khi merge nhánh tích hợp vào `main`**
 - Thành viên và vai trò:
   - **Phạm Nguyễn Đăng Khôi — Thành viên A (API & Middleware):** Correlation ID middleware, log enrichment và exception handler.
-  - **Trần Trung — Thành viên B (Security Engineer):** PII scrubbing, regex và kiểm chứng log không lộ PII.
+  - **Trần Đức Bảo Trung — Thành viên B (Security Engineer):** PII scrubbing, regex và kiểm chứng log không lộ PII.
   - **Vi Minh Hiển — Thành viên C (Metrics & Dashboard):** `error_rate_pct` và dashboard sáu nhóm chỉ số.
-  - **Đặng Đức — Thành viên D (SRE & Alerts Engineer):** SLO, alert rules và alert runbook.
-  - **Sơn (`sondo1307`) — Thành viên E (QA & Chief Investigator):** load test, trace RAG/LLM, điều tra challenge, evidence, demo và báo cáo.
+  - **Nguyễn Đặng Đức — Thành viên D (SRE & Alerts Engineer):** SLO, alert rules và alert runbook.
+  - **Đỗ Tuấn Sơn — Thành viên E (QA & Chief Investigator):** load test, trace RAG/LLM, điều tra challenge, evidence, demo và báo cáo.
 
 ## 2. Kết quả kỹ thuật
 
