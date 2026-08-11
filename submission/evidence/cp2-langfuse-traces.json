@@ -1,0 +1,19 @@
+{
+  "verified_at_utc": "2026-08-11T05:24:15Z",
+  "source": "Langfuse Cloud API",
+  "trace_count": 12,
+  "traces": [
+    {"trace_id":"d00cf42b8c740e8cdb8397c55d3437e3","timestamp":"2026-08-11T05:23:54.912Z","correlation_id":"req-7a253bc1","prompt_label":"production","prompt_version":1,"observations":["run","retrieve","generate"]},
+    {"trace_id":"48042fdc9922da0acb65806cdb044fd0","timestamp":"2026-08-11T05:23:52.255Z","correlation_id":"req-00a9369b","prompt_label":"production","prompt_version":1,"observations":["run","retrieve","generate"]},
+    {"trace_id":"006665a11ed512816828cbc168f9b031","timestamp":"2026-08-11T05:23:49.600Z","correlation_id":"req-e393c011","prompt_label":"production","prompt_version":1,"observations":["run","retrieve","generate"]},
+    {"trace_id":"21469ffcba5f0bd4536b2f338176e5e7","timestamp":"2026-08-11T05:23:46.943Z","correlation_id":"req-2b095818","prompt_label":"production","prompt_version":1,"observations":["run","retrieve","generate"]},
+    {"trace_id":"ea22029eefbbe6521c28f957505d7539","timestamp":"2026-08-11T05:23:44.285Z","correlation_id":"req-0c2d904b","prompt_label":"production","prompt_version":1,"observations":["run","retrieve","generate"]},
+    {"trace_id":"12c262a2d660163a683ea05e6b6ae083","timestamp":"2026-08-11T05:21:32.344Z","correlation_id":"req-c0ffee13","prompt_label":"production","prompt_version":1,"observations":["run","retrieve","generate"]},
+    {"trace_id":"0f1224475d482f7e743b8b91306e96a6","timestamp":"2026-08-11T05:20:31.232Z","correlation_id":"req-306e96a6","prompt_label":"production","prompt_version":1,"observations":["run","retrieve","generate"]},
+    {"trace_id":"35387c38cb0c88072009c70a8705df7e","timestamp":"2026-08-11T05:17:04.951Z","correlation_id":"req-b11a6a55","prompt_label":"candidate","prompt_version":2,"observations":["run","retrieve","generate"]},
+    {"trace_id":"b236091e76679ab20f7748ace74be7d3","timestamp":"2026-08-11T05:17:04.022Z","correlation_id":"req-ae5c996d","prompt_label":"baseline","prompt_version":1,"observations":["run","retrieve","generate"]},
+    {"trace_id":"b00b15c2a921689855180cb993699d89","timestamp":"2026-08-11T05:01:18.979Z","correlation_id":"req-1234abcd","prompt_label":"production","prompt_version":"local-v1","observations":["run"]},
+    {"trace_id":"abc47af7e61eee2ad8fa791cb9800007","timestamp":"2026-08-11T04:33:35.116Z","correlation_id":"req-dd2bf32e","prompt_label":"production","prompt_version":"local-v1","observations":["run"]},
+    {"trace_id":"510d31b4c62f255a1bfd8e3b0e3b56cb","timestamp":"2026-08-11T04:33:34.240Z","correlation_id":"req-d0976a55","prompt_label":"production","prompt_version":"local-v1","observations":["run"]}
+  ]
+}

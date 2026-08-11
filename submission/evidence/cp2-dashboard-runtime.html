@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Day 13 AI Observability Dashboard</title>
+<style>
+:root { color-scheme: dark; font-family: Inter, "Segoe UI", sans-serif; background:#07111f; color:#e5edf8; }
+* { box-sizing:border-box; } body { margin:0; padding:34px 42px 42px; min-width:1400px; background:radial-gradient(circle at 90% 0,#172554 0,#07111f 42%); }
+header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; }
+h1 { margin:0 0 8px; font-size:34px; letter-spacing:-.03em; } header p { margin:0; color:#9fb0c8; }
+.meta { display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; max-width:760px; } .pill { background:#10223a; border:1px solid #27405f; border-radius:999px; padding:8px 12px; color:#c7d5e8; font-size:13px; }
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .panel { min-height:420px; padding:22px; border:1px solid #223a59; border-radius:18px; background:linear-gradient(145deg,rgba(18,37,61,.96),rgba(8,22,39,.96)); box-shadow:0 18px 46px rgba(0,0,0,.2); }
+.panel-head { display:flex; justify-content:space-between; gap:14px; align-items:flex-start; } h2 { margin:0; font-size:18px; } .panel-head p { margin:5px 0 0; color:#8296b1; font-size:12px; text-transform:uppercase; letter-spacing:.09em; }
+.status { font-size:11px; font-weight:700; padding:6px 8px; border-radius:8px; white-space:nowrap; } .status.ok { color:#6ee7b7; background:#064e3b66; } .status.bad { color:#fda4af; background:#88133766; }
+.primary { font-size:38px; font-weight:800; margin:24px 0 14px; letter-spacing:-.035em; } .details { display:flex; gap:8px; flex-wrap:wrap; min-height:56px; } .details span { background:#0b1a2d; border:1px solid #203752; color:#bac9dc; padding:7px 9px; border-radius:8px; font-size:12px; }
+.spark { width:100%; height:104px; margin:20px 0 10px; } .axis { stroke:#314763; stroke-width:1; stroke-dasharray:4 5; } .threshold { border-top:1px solid #243b58; padding-top:14px; color:#aebed1; font-size:13px; }
+footer { margin-top:20px; color:#7186a2; font-size:12px; display:flex; justify-content:space-between; }
+</style></head><body>
+<header><div><h1>Day 13 · AI Observability</h1><p>Runtime dashboard generated from structured JSON logs</p></div>
+<div class="meta"><span class="pill">Source: data/logs.jsonl</span><span class="pill">Time range: 60 minutes</span><span class="pill">Refresh: 30 seconds</span><span class="pill">Records in window: 54</span></div></header>
+<main class="grid">
+    <section class="panel">
+      <div class="panel-head"><div><h2>1. Latency percentiles</h2><p>milliseconds (ms)</p></div>
+      <span class="status ok">Within threshold</span></div>
+      <div class="primary">P95 1,045 ms</div>
+      <div class="details"><span>P50 857 ms</span><span>P99 1,789 ms</span><span>21 responses</span></div>
+      <svg class="spark" viewBox="0 0 430 92" role="img"><line x1="8" y1="84" x2="422" y2="84" class="axis" /><polyline points="8.0,84.0 67.1,84.0 126.3,84.0 185.4,84.0 244.6,84.0 303.7,47.6 362.9,8.0 422.0,48.7" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><circle cx="422.0" cy="48.7" r="5" fill="#67e8f9" /></svg>
+      <div class="threshold">Threshold/SLO: P95 ≤ 3,000 ms</div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>2. Request traffic</h2><p>requests per minute</p></div>
+      <span class="status ok">Within threshold</span></div>
+      <div class="primary">21 requests</div>
+      <div class="details"><span>Peak 10 req/min</span><span>21 successful</span><span>0 failed</span></div>
+      <svg class="spark" viewBox="0 0 430 92" role="img"><line x1="8" y1="84" x2="422" y2="84" class="axis" /><polyline points="8.0,84.0 67.1,84.0 126.3,84.0 185.4,84.0 244.6,84.0 303.7,8.0 362.9,8.0 422.0,76.4" fill="none" stroke="#a78bfa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><circle cx="422.0" cy="76.4" r="5" fill="#a78bfa" /></svg>
+      <div class="threshold">Threshold/SLO: ≥ 1 request/minute</div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>3. Error rate &amp; breakdown</h2><p>percent (%)</p></div>
+      <span class="status ok">Within threshold</span></div>
+      <div class="primary">0.00%</div>
+      <div class="details"><span>No request failures</span><span>Breakdown: empty</span></div>
+      <svg class="spark" viewBox="0 0 430 92" role="img"><line x1="8" y1="84" x2="422" y2="84" class="axis" /><polyline points="8.0,84.0 67.1,84.0 126.3,84.0 185.4,84.0 244.6,84.0 303.7,84.0 362.9,84.0 422.0,84.0" fill="none" stroke="#fb7185" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><circle cx="422.0" cy="84.0" r="5" fill="#fb7185" /></svg>
+      <div class="threshold">Threshold/SLO: Error rate ≤ 2%</div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>4. AI cost</h2><p>US dollars (USD)</p></div>
+      <span class="status ok">Within threshold</span></div>
+      <div class="primary">$0.0451</div>
+      <div class="details"><span>Average $0.0021</span><span>21 billed responses</span></div>
+      <svg class="spark" viewBox="0 0 430 92" role="img"><line x1="8" y1="84" x2="422" y2="84" class="axis" /><polyline points="8.0,84.0 67.1,84.0 126.3,84.0 185.4,84.0 244.6,84.0 303.7,16.1 362.9,8.0 422.0,77.7" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><circle cx="422.0" cy="77.7" r="5" fill="#fbbf24" /></svg>
+      <div class="threshold">Threshold/SLO: Window total ≤ $2.50</div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>5. Input / output tokens</h2><p>tokens</p></div>
+      <span class="status ok">Within threshold</span></div>
+      <div class="primary">3,555 total</div>
+      <div class="details"><span>Input 685</span><span>Output 2,870</span></div>
+      <svg class="spark" viewBox="0 0 430 92" role="img"><line x1="8" y1="84" x2="422" y2="84" class="axis" /><polyline points="8.0,84.0 67.1,84.0 126.3,84.0 185.4,84.0 244.6,84.0 303.7,14.9 362.9,8.0 422.0,77.7" fill="none" stroke="#34d399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><circle cx="422.0" cy="77.7" r="5" fill="#34d399" /></svg>
+      <div class="threshold">Threshold/SLO: Each aggregate ≤ 50,000 tokens</div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>6. Quality proxy</h2><p>score 0–1</p></div>
+      <span class="status ok">Within threshold</span></div>
+      <div class="primary">0.876</div>
+      <div class="details"><span>21 scored responses</span><span>Mean quality_score</span></div>
+      <svg class="spark" viewBox="0 0 430 92" role="img"><line x1="8" y1="84" x2="422" y2="84" class="axis" /><polyline points="8.0,84.0 67.1,84.0 126.3,84.0 185.4,84.0 244.6,84.0 303.7,8.0 362.9,8.0 422.0,14.9" fill="none" stroke="#60a5fa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><circle cx="422.0" cy="14.9" r="5" fill="#60a5fa" /></svg>
+      <div class="threshold">Threshold/SLO: Mean ≥ 0.75</div>
+    </section>
+    </main>
+<footer><span>Window: 2026-08-11T04:01:19+00:00 → 2026-08-11T05:01:19+00:00</span><span>Generated: 2026-08-11T05:19:44+00:00</span></footer>
+</body></html>

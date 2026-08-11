@@ -1,0 +1,13 @@
+{
+  "verified_at_utc": "2026-08-11T05:18:09Z",
+  "source": "Langfuse Cloud API",
+  "prompt_name": "day13-chat",
+  "promotion": {
+    "production_version": 2,
+    "labels": ["candidate", "latest", "production"]
+  },
+  "rollback": {
+    "production_version": 1,
+    "labels": ["baseline", "production"]
+  }
+}

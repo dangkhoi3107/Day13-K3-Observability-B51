@@ -1,0 +1,32 @@
+{
+  "verified_at_utc": "2026-08-11T05:17:04Z",
+  "source": "Langfuse Cloud API",
+  "prompt_name": "day13-chat",
+  "same_input": "Explain the refund window and required evidence.",
+  "traces": [
+    {
+      "label": "baseline",
+      "prompt_version": 1,
+      "prompt_source": "langfuse",
+      "trace_id": "b236091e76679ab20f7748ace74be7d3",
+      "correlation_id": "req-ae5c996d",
+      "observations": [
+        {"name": "run", "type": "GENERATION", "prompt_version": 1},
+        {"name": "retrieve", "type": "SPAN"},
+        {"name": "generate", "type": "SPAN"}
+      ]
+    },
+    {
+      "label": "candidate",
+      "prompt_version": 2,
+      "prompt_source": "langfuse",
+      "trace_id": "35387c38cb0c88072009c70a8705df7e",
+      "correlation_id": "req-b11a6a55",
+      "observations": [
+        {"name": "run", "type": "GENERATION", "prompt_version": 2},
+        {"name": "retrieve", "type": "SPAN"},
+        {"name": "generate", "type": "SPAN"}
+      ]
+    }
+  ]
+}
