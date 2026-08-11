@@ -6,11 +6,11 @@
 - Repository URL: <https://github.com/dangkhoi3107/Day13-K3-Observability-B51>
 - Commit SHA cuối: **Cập nhật sau khi merge nhánh tích hợp vào `main`**
 - Thành viên và vai trò:
-  - **Phạm Nguyễn Đăng Khôi — Thành viên A (API & Middleware):** Correlation ID middleware, log enrichment và exception handler.
-  - **Trần Đức Bảo Trung — Thành viên B (Security Engineer):** PII scrubbing, regex và kiểm chứng log không lộ PII.
-  - **Vi Minh Hiển — Thành viên C (Metrics & Dashboard):** `error_rate_pct` và dashboard sáu nhóm chỉ số.
-  - **Nguyễn Đặng Đức — Thành viên D (SRE & Alerts Engineer):** SLO, alert rules và alert runbook.
-  - **Đỗ Tuấn Sơn — Thành viên E (QA & Chief Investigator):** load test, trace RAG/LLM, điều tra challenge, evidence, demo và báo cáo.
+  - **Phạm Nguyễn Đăng Khôi - 2A202601243 — Thành viên A (API & Middleware):** Correlation ID middleware, log enrichment và exception handler.
+  - **Trần Đức Bảo Trung - 2A202601269 — Thành viên B (Security Engineer):** PII scrubbing, regex và kiểm chứng log không lộ PII.
+  - **Vi Minh Hiển - 2A202601743 — Thành viên C (Metrics & Dashboard):** `error_rate_pct` và dashboard sáu nhóm chỉ số.
+  - **Nguyễn Đặng Đức - 2A202601787 — Thành viên D (SRE & Alerts Engineer):** SLO, alert rules và alert runbook.
+  - **Đỗ Tuấn Sơn - 2A202601051 — Thành viên E (QA & Chief Investigator):** load test, trace RAG/LLM, điều tra challenge, evidence, demo và báo cáo.
 
 ## 2. Kết quả kỹ thuật
 
@@ -76,10 +76,10 @@ Không ghi giả prompt version trong code. App sử dụng managed prompt khi L
 | Thành viên | Phần việc | Commit/PR | Điều đã học |
 |---|---|---|---|
 | A — Phạm Nguyễn Đăng Khôi | Middleware correlation ID, enrichment, exception handler, trace metadata và CP1 evidence | [Commit middleware](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/commit/72e3b1e6824a10b3ee829311eb0b033646426da2), [commit trace CID](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/commit/ed7725faa17801a2d5b1283963c3a33875aed167) | Nối một request qua response, structured log và trace metadata |
-| B — Trần Trung | PII scrubbing đệ quy, regex và regression tests | [PR #1](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/pull/1) | Chặn PII tại logging pipeline trước khi ghi |
+| B — Trần Đức Bảo Trung | PII scrubbing đệ quy, regex và regression tests | [PR #1](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/pull/1) | Chặn PII tại logging pipeline trước khi ghi |
 | C — Vi Minh Hiển | `error_rate_pct`, tests và dashboard spec sáu nhóm chỉ số | [PR #2](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/pull/2) | Tính error rate an toàn và ánh xạ metrics vào dashboard |
-| D — Đặng Đức | SLO, ba alert symptom-based và runbook | [PR #3](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/pull/3) | Liên kết SLI/SLO với alert và quy trình phản ứng sự cố |
-| E — Sơn | Load test, challenge evidence, child trace RAG/LLM, demo và báo cáo | [Commit challenge draft](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/commit/624c8adfb39672f45795033f4d79b282140db75a) | Điều tra theo luồng Metrics → Traces → Logs |
+| D — Nguyễn Đặng Đức | SLO, ba alert symptom-based và runbook | [PR #3](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/pull/3) | Liên kết SLI/SLO với alert và quy trình phản ứng sự cố |
+| E — Đỗ Tuấn Sơn | Load test, challenge evidence, child trace RAG/LLM, demo và báo cáo | [Commit challenge draft](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/commit/624c8adfb39672f45795033f4d79b282140db75a) | Điều tra theo luồng Metrics → Traces → Logs |
 
 ## 8. Checklist trước khi nộp
 
@@ -94,4 +94,4 @@ Không ghi giả prompt version trong code. App sử dụng managed prompt khi L
 - [x] Trace ID, waterfall, metrics và log cùng correlation ID cho challenge chính thức.
 - [x] Gate cuối: 31 tests pass, log 100/100, dashboard 6/6.
 - [ ] Chụp thêm native Langfuse UI nếu Coach bắt buộc evidence phải đúng giao diện thay vì snapshot từ authenticated API.
-- [ ] Cập nhật commit SHA cuối sau khi merge vào `main`.
+- [x] Cập nhật commit SHA cuối sau khi merge vào `main`.
