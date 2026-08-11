@@ -9,15 +9,15 @@
 
 ## 2. Kết quả kỹ thuật
 
-- Điểm `validate_logs.py`:
-- Tổng số traces:
-- Số PII leak còn lại:
+- Điểm `validate_logs.py`: **100/100** ([evidence](evidence/cp1-a-validator-100.png))
+- Tổng số traces: **10 trace mới có correlation ID** ([mapping trace ↔ log](evidence/cp1-langfuse-correlation-traces.json))
+- Số PII leak còn lại: **0**
 - Link/đường dẫn dashboard:
 
 ## 3. Logging và tracing
 
-- Evidence correlation ID:
-- Evidence PII redaction:
+- Evidence correlation ID: [Response headers và log metadata](evidence/cp1-a-correlation-headers.jpg); [Langfuse trace metadata](evidence/cp1-langfuse-correlation-traces.json)
+- Evidence PII redaction: [Log JSONL có correlation ID, metadata và chuỗi REDACTED](evidence/cp1-correlation-pii-redaction.jsonl)
 - Evidence trace waterfall:
 - Giải thích một span đáng chú ý:
 
@@ -56,5 +56,8 @@ Với mỗi thành viên, ghi rõ nhiệm vụ và link commit/PR tương ứng.
 
 | Thành viên | Phần việc | Commit/PR | Điều đã học |
 |---|---|---|---|
+| Thành viên A (API & Middleware) | CP1: Correlation ID middleware, log enrichment, exception handler và liên kết correlation ID với Langfuse trace | [Middleware và enrichment](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/commit/72e3b1e6824a10b3ee829311eb0b033646426da2); [Trace CID và evidence](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/commit/ed7725faa17801a2d5b1283963c3a33875aed167) | Truy vết một request xuyên suốt response, structured log và trace metadata |
+| Thành viên B (Security Engineer) | CP1: PII scrubbing đệ quy, mở rộng regex và kiểm chứng log không lộ PII | [PR #1](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/pull/1) | Thiết kế processor che PII trước khi log được ghi hoặc render |
+| Thành viên C (Metrics & Dashboard) | CP1: Bổ sung `error_rate_pct` và regression tests | [PR #2](https://github.com/dangkhoi3107/Day13-K3-Observability-B51/pull/2) | Tính error rate từ request thành công và thất bại, bao gồm trường hợp chưa có request |
 | Thành viên D (SRE & Alerts Engineer) | CP2: Thiết lập SLO (`config/slo.yaml`), định nghĩa Alert Rules (`config/alert_rules.yaml`) và soạn thảo Alert Runbook (`docs/alerts.md`) | Branch `dangduc` | Hiểu rõ cách liên kết chỉ số SLI/SLO với Symptom-based Alerts và quy trình Runbook phản ứng nhanh với sự cố AI |
 
