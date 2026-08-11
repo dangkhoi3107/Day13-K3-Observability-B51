@@ -4,13 +4,17 @@ slis:
   latency_p95_ms:
     objective: 3000
     target: 99.5
-    note: Replace with your group's target
+    note: P95 response latency must be under 3000ms
   error_rate_pct:
     objective: 2
     target: 99.0
+    note: Error rate must be under 2%
   daily_cost_usd:
     objective: 2.5
     target: 100.0
+    note: Daily AI token cost budget capped at $2.5
   quality_score_avg:
     objective: 0.75
     target: 95.0
+    note: Average answer quality score must be at least 0.75
+

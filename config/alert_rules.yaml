@@ -1,19 +1,20 @@
 alerts:
-  - name: TODO_alert_1
-    severity: TODO
-    condition: TODO
+  - name: HighErrorRate
+    severity: P1-Critical
+    condition: error_rate_pct > 2% for 2m
     type: symptom-based
-    owner: TODO
-    runbook: docs/alerts.md#alert-1
-  - name: TODO_alert_2
-    severity: TODO
-    condition: TODO
+    owner: SRE-Team
+    runbook: docs/alerts.md#alert-1-high-error-rate
+  - name: HighLatencyP95
+    severity: P2-Warning
+    condition: latency_p95_ms > 3000ms for 3m
     type: symptom-based
-    owner: TODO
-    runbook: docs/alerts.md#alert-2
-  - name: TODO_alert_3
-    severity: TODO
-    condition: TODO
+    owner: SRE-Team
+    runbook: docs/alerts.md#alert-2-high-latency-p95
+  - name: DegradingQualityScore
+    severity: P3-Info
+    condition: quality_score_avg < 0.75 for 5m
     type: symptom-based
-    owner: TODO
-    runbook: docs/alerts.md#alert-3
+    owner: AI-Ops-Team
+    runbook: docs/alerts.md#alert-3-degrading-quality-score
+
