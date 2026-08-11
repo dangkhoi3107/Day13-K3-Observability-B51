@@ -17,7 +17,7 @@
 ## 3. Logging và tracing
 
 - Evidence correlation ID: [Response headers và log metadata](evidence/cp1-a-correlation-headers.jpg); [Langfuse trace metadata](evidence/cp1-langfuse-correlation-traces.json)
-- Evidence PII redaction: [Log JSONL có correlation ID, metadata và chuỗi REDACTED](evidence/cp1-correlation-pii-redaction.jsonl)
+- Evidence PII redaction: [Ảnh log đã redact](evidence/cp1-pii-redaction.png); [Log JSONL](evidence/cp1-correlation-pii-redaction.jsonl)
 - Evidence trace waterfall:
 - Giải thích một span đáng chú ý:
 
