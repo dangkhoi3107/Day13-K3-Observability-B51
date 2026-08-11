@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Challenge log evidence</title><style>
+*{box-sizing:border-box}body{margin:0;min-width:1500px;background:#07111f;color:#e8f0fa;font-family:Inter,"Segoe UI",sans-serif;padding:45px}h1{font-size:35px;margin:0 0 8px}p{margin:0;color:#94aac4}.meta{display:flex;gap:10px;margin:24px 0}.pill{background:#102740;border:1px solid #2c4a68;border-radius:999px;padding:9px 13px}.pill strong{color:#7dd3fc}.terminal{background:#02070d;border:1px solid #263d55;border-radius:16px;padding:24px;box-shadow:0 25px 60px #0008}.title{display:flex;align-items:center;gap:8px;border-bottom:1px solid #25384c;padding-bottom:15px;margin-bottom:18px;color:#839ab4}.dot{width:11px;height:11px;border-radius:50%;background:#fb7185}.dot:nth-child(2){background:#fbbf24}.dot:nth-child(3){background:#34d399}pre{white-space:pre-wrap;word-break:break-word;font:15px/1.7 "Cascadia Mono",Consolas,monospace;color:#c8d6e7;margin:0}.key{color:#7dd3fc}.cid{color:#c4b5fd}.latency{color:#fda4af;font-weight:800}.ok{color:#6ee7b7}.proof{margin-top:20px;background:#10233a;border:1px solid #284765;border-radius:13px;padding:17px;display:flex;justify-content:space-between}.proof code{color:#7dd3fc}
+</style></head><body><h1>Raw structured log · CP3 evidence</h1><p>The same correlation ID links the HTTP request, log records and Langfuse trace.</p><div class="meta"><span class="pill"><strong>correlation_id</strong> req-c0ffee13</span><span class="pill"><strong>trace_id</strong> 12c262a2…6b6ae083</span><span class="pill"><strong>PII leaks</strong> 0</span></div>
+<section class="terminal"><div class="title"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>submission/evidence/cp3-challenge-correlated-log.jsonl</span></div><pre>{
+  <span class="key">"event"</span>: "request_received",
+  <span class="key">"feature"</span>: "refund",
+  <span class="key">"session_id"</span>: "k3-challenge-s01-e2e",
+  <span class="key">"correlation_id"</span>: <span class="cid">"req-c0ffee13"</span>,
+  <span class="key">"user_id_hash"</span>: "026c7a407135",
+  <span class="key">"message_preview"</span>: "What is your refund policy?"
+}
+
+{
+  <span class="key">"event"</span>: "response_sent",
+  <span class="key">"feature"</span>: "refund",
+  <span class="key">"session_id"</span>: "k3-challenge-s01-e2e",
+  <span class="key">"correlation_id"</span>: <span class="cid">"req-c0ffee13"</span>,
+  <span class="key">"latency_ms"</span>: <span class="latency">4329</span>,
+  <span class="key">"quality_score"</span>: <span class="ok">0.9</span>,
+  <span class="key">"cost_usd"</span>: 0.002742
+}</pre></section><div class="proof"><span>Request latency exceeded challenge threshold; waterfall assigns 2.501s to <strong>retrieve</strong>.</span><code>req-c0ffee13 ↔ 12c262a2d660163a683ea05e6b6ae083</code></div></body></html>

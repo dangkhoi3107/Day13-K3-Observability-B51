@@ -1,0 +1,15 @@
+{
+  "verified_at_utc": "2026-08-11T05:28:10Z",
+  "procedure": "disable incident, restart API to reset in-memory metrics, run clean load_test with concurrency 5",
+  "traffic": 10,
+  "latency_p50": 153.0,
+  "latency_p95": 960.0,
+  "latency_p99": 960.0,
+  "avg_cost_usd": 0.002,
+  "total_cost_usd": 0.0197,
+  "tokens_in_total": 330,
+  "tokens_out_total": 1250,
+  "error_rate_pct": 0.0,
+  "error_breakdown": {},
+  "quality_avg": 0.88
+}
